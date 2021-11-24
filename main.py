@@ -42,7 +42,6 @@ def detector(path_to_weights, path_to_cfg,path_to_sign_names,path_to_sign_classe
     while True:
         #reading the frame
         res,img=video_capture.read()
-
         #if the frame is not read, then break
         if not res:
             break
@@ -111,8 +110,9 @@ def detector(path_to_weights, path_to_cfg,path_to_sign_names,path_to_sign_classe
                 
                 if len(crop_img)>0:#if the image is not empty
                     #resizing the image to the required width and height as per the arguments passed to our classification model
+                    crop_img = cv2.cvtColor(crop_img, cv2.COLOR_BGR2RGB)
                     crop_img = cv2.resize(crop_img, (WIDTH, HEIGHT))
-                    crop_img =  crop_img.reshape(-1, WIDTH,HEIGHT,3)
+                    crop_img = crop_img.reshape(-1, WIDTH,HEIGHT,3)
                     
                     #getting the predicted class's index of the traffic sign to identify it's class
                     prediction = np.argmax(classification_model.predict(crop_img))
