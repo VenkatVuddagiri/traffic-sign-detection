@@ -41,7 +41,7 @@ def videoDetector(default_path,path_to_weights, path_to_cfg,path_to_sign_names,p
     
     #creating a video writer object to write the output video
     fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-    outputOb = cv2.VideoWriter(default_path+'output.mp4',fourcc, 25, (1280,720))
+    outputOb = cv2.VideoWriter(default_path+'output1.mp4',fourcc, 25, (1280,720))
 
     while True:
         #reading the frame
@@ -135,17 +135,16 @@ def videoDetector(default_path,path_to_weights, path_to_cfg,path_to_sign_names,p
         #calculating the fps
         fps = frame_count/spent_time
 
-        #displaying the fps on the output video
-        cv2.putText(img,'FPS: '+str(round(fps, 2)),(20,40),font,1,(0,0,255),3)
-        
         #printing fps to console for debugging purposes
         print("fps: ", str(round(fps, 2)))
         
-        #displaying the image
-        cv2.imshow("Image", img)
-        
         #writing to the output video
         outputOb.write(img)
+
+        cv2.putText(img, "FPS: "+str(round(fps, 2)), (10, 30), font, 1, (0, 0, 255), 2)
+        
+        #displaying the image
+        cv2.imshow("Image", img)
 
         #checking for key press, if q is pressed then break from the loop and stop the execution
         if cv2.waitKey(1) & 0xFF == ord ('q'):
