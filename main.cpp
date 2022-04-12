@@ -53,14 +53,11 @@ void detector(string path_to_weights,string path_to_cfg,string path_to_sign_name
         }
         //resizing the frame
         resize(frame,frame,Size(640,480));
-        //converting the frame to grayscale
-        cvtColor(frame,frame,COLOR_BGR2GRAY);
-        //getting the output at the output layeyrs of the neural network
-        vector<Mat>outputs;
-        net.setInput(cv::dnn::blobFromImage(frame,1/255.0,Size(416,416,3),Scalar(0,0,0),true,false));
+        //getting the output layers of the neural network in the form of a vector of vector of Mat
+        vector<vector<Mat>>outputs;
+        net.setInput(cv::dnn::blobFromImage(frame,1/255.0,Size(416,416),Scalar(0,0,0),true,false));
+        //getting the output from output layers
         net.forward(outputs,output_layers);
-        //getting the number of detected objects    
-
         //checking if the predictions are empty
         if(outputs.size()==0){
             cout<<"No object detected"<<endl;
@@ -71,18 +68,19 @@ void detector(string path_to_weights,string path_to_cfg,string path_to_sign_name
         //looping over the predictions
         for(int i=0;i<outputs.size();i++){
             //getting the prediction
-            vector<float>prediction=outputs[i];
+            vector<Mat>prediction=outputs[i];
+            cout << prediction[0].size();
             //getting the class id
-            int class_id=prediction[0];
+            int class_id=prediction[0].at<float>(0,1);
             //getting the confidence
-            float confidence=prediction[2];
+            float confidence=prediction[0].at<float>(0,2);
             //getting the class name
             string class_name=classes[class_id];
             //getting the bounding box coordinates
-            int left=prediction[3]*frame.cols;
-            int top=prediction[4]*frame.rows;
-            int right=prediction[5]*frame.cols;
-            int bottom=prediction[6]*frame.rows;
+            int left=prediction[0].at<float>(0,3)*frame.cols;
+            int top=prediction[0].at<float>(0,4)*frame.rows;
+            int right=prediction[0].at<float>(0,5)*frame.cols;
+            int bottom=prediction[0].at<float>(0,6)*frame.rows;
             //checking if the confidence is greater than 0.5
             if(confidence>0.5){
                 //drawing the bounding box
