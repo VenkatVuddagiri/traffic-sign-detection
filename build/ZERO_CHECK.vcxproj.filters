@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\venka\OneDrive\Desktop\traffic-sign-detection\build\CMakeFiles\37660fefd9cf814cd82671308e572229\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{C7E1D0C4-1DBB-3641-A4C1-254B3CF5D072}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

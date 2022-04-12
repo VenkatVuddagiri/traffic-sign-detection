@@ -1,0 +1,9 @@
+C:/Users/venka/OneDrive/Desktop/traffic-sign-detection/build/CMakeFiles/Experimental.dir
+C:/Users/venka/OneDrive/Desktop/traffic-sign-detection/build/CMakeFiles/Nightly.dir
+C:/Users/venka/OneDrive/Desktop/traffic-sign-detection/build/CMakeFiles/Continuous.dir
+C:/Users/venka/OneDrive/Desktop/traffic-sign-detection/build/CMakeFiles/NightlyMemoryCheck.dir
+C:/Users/venka/OneDrive/Desktop/traffic-sign-detection/build/CMakeFiles/traffic-sign-detection.dir
+C:/Users/venka/OneDrive/Desktop/traffic-sign-detection/build/CMakeFiles/PACKAGE.dir
+C:/Users/venka/OneDrive/Desktop/traffic-sign-detection/build/CMakeFiles/RUN_TESTS.dir
+C:/Users/venka/OneDrive/Desktop/traffic-sign-detection/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/venka/OneDrive/Desktop/traffic-sign-detection/build/CMakeFiles/ZERO_CHECK.dir
