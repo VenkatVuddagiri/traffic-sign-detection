@@ -1,5 +1,4 @@
-Input/output.mp4
-Input/output1.mp4
-Input/traffic-signs-video.mp4
-Input/traffic.h5
-Input/yolov3_training.weights
+Input
+out
+build
+traffic-sign-detection
