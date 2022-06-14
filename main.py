@@ -36,10 +36,10 @@ def detector(path_to_weights, path_to_cfg,path_to_sign_names,path_to_sign_classe
     with open(path_to_sign_classes, "r") as f:
         classes_classification = [line.strip() for line in f.readlines()]
     
-    #creating an object to capture video from the camera
-    video_capture = cv2.VideoCapture(0)
-
     while True:
+        #creating an object to capture video from the camera
+        video_capture = cv2.VideoCapture(0)
+
         #reading the frame
         res,img=video_capture.read()
         #if the frame is not read, then break
