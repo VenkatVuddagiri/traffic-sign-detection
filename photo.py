@@ -143,8 +143,8 @@ def videoDetector(default_path,path_to_weights, path_to_cfg,path_to_sign_names,p
 #calling the main function if the file is run as a script
 if __name__=='__main__':
     #change this path according to your system
-    default_path='C:/Users/venka/OneDrive/Desktop/traffic-sign-detection/Input/'
-    path_to_video=default_path+'photo.png'
+    default_path='/home/pi/Desktop/traffic-sign-detection/Input/'
+    path_to_video=default_path+'sppedlimit30.png'
     path_to_weights = default_path+'yolov3_training.weights'
     path_to_cfg = default_path+'yolov3_training.cfg'
     path_to_sign_names=default_path+'sign_names.txt'
