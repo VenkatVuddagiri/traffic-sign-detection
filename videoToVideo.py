@@ -11,8 +11,9 @@ def captureTheVideo(path_to_video,num_of_frames):
     for i in range(num_of_frames):
         #reading the frame
         img=cv2.imread(path_to_video+'photo'+str((i%4)+1)+'.png')
-        #writing the frame to the output video
-        outputOb.write(img)
+        for j in range(25):
+            #writing the frame to the output video
+            outputOb.write(img)
     outputOb.release()
     video=cv2.VideoCapture(path_to_video+'input.mp4')
     return video
